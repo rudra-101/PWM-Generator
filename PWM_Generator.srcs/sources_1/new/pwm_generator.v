@@ -95,3 +95,20 @@ module pwm_generator
         DUTY_CYCLE_OUT <= DUTY_CYCLE;
 
 endmodule
+
+
+module DFF_PWM(
+    input clk,
+    input reset,
+    input enable,
+    input d,
+    output reg q
+);
+    always @(posedge clk or posedge reset)
+    begin
+        if (reset)
+            q <= 0;
+        else if (enable)
+            q <= d;
+    end
+endmodule
