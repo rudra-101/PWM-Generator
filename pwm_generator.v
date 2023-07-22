@@ -80,7 +80,7 @@ end
     always @(posedge clk)
     begin
         counter_PWM <= counter_PWM + 1;
-        if (counter_PWM >= 9)
+        if (counter_PWM >= 15)
             counter_PWM <= 0;
     end
 
